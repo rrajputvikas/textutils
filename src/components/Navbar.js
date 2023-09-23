@@ -1,9 +1,13 @@
 import React from "react";
 import propTypes from "prop-types";
+import ThemeToggler from "./ThemeToggler";
 
-const Navbar = ({ title, about }) => {
+const Navbar = ({ title, mode, toggleMode }) => {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+    <nav
+      className="navbar navbar-expand-lg bg-body-tertiary"
+      data-bs-theme={mode}
+    >
       <div className="container-fluid">
         <a className="navbar-brand" href="/">
           {title}
@@ -28,20 +32,12 @@ const Navbar = ({ title, about }) => {
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/">
-                {about}
+                About Us
               </a>
             </li>
           </ul>
           <form className="d-flex" role="search">
-            <input
-              className="form-control border-danger me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button className="btn btn-outline-danger" type="submit">
-              Search
-            </button>
+            <ThemeToggler mode={mode} toggleMode={toggleMode} />
           </form>
         </div>
       </div>
@@ -51,13 +47,10 @@ const Navbar = ({ title, about }) => {
 
 Navbar.propTypes = {
   title: propTypes.string.isRequired,
-  about: propTypes.string.isRequired,
 };
 
 Navbar.defaultProps = {
-    title: "Your title here",
-    about: "About Us"
-}
-
+  title: "Your title here",
+};
 
 export default Navbar;
