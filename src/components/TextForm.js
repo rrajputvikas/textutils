@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import propTypes from "prop-types";
 import ToggleSwitch from "./ToggleSwitch";
+import ColorPlate from "./ColorPlate";
 
-const TextForm = ({ heading, parameter2, currentVal }) => {
+const TextForm = ({ heading, parameter2, currentMode }) => {
   const [currentWeight, setWeight] = useState("normal");
 
   const toggleWeight = () => {
@@ -32,10 +33,13 @@ const TextForm = ({ heading, parameter2, currentVal }) => {
   const [text, setText] = useState("your text here...");
 
   return (
-    <div style={{ color: currentVal === parameter2 ? "white" : "black" }}>
+    <div style={{ color: currentMode === parameter2 ? "white" : "black" }}>
       <div className="container my-3">
         <div className="mb-3">
-          <h1>{heading}</h1>
+          <div className="d-flex align-items-center justify-content-between">
+            <h1>{heading}</h1>
+            <ColorPlate currentMode ={currentMode} />
+          </div>
           <textarea
             className="form-control border-danger border-2 shadow"
             id="myBox"
@@ -43,8 +47,8 @@ const TextForm = ({ heading, parameter2, currentVal }) => {
             value={text}
             onChange={textChanged}
             style={{
-              backgroundColor: currentVal === parameter2 ? "#959595" : "white",
-              color: currentVal === parameter2 ? "#031c30" : "black",
+              backgroundColor: currentMode === parameter2 ? "#959595" : "white",
+              color: currentMode === parameter2 ? "#031c30" : "black",
             }}
           ></textarea>
         </div>
@@ -108,7 +112,7 @@ const TextForm = ({ heading, parameter2, currentVal }) => {
 
 TextForm.propTypes = {
   parameter2: propTypes.string.isRequired,
-  currentVal: propTypes.string.isRequired,
+  currentMode: propTypes.string.isRequired,
 };
 
 export default TextForm;

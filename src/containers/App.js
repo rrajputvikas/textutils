@@ -24,9 +24,9 @@ function App() {
         toggle={toggle}
       />
       <TextForm
-        heading="Enter text to analyze"
+        heading="Input Text"
         parameter2="dark"
-        currentVal={currentMode}
+        currentMode={currentMode}
       />
     </>
   );
