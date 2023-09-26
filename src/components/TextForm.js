@@ -34,14 +34,14 @@ const TextForm = ({ heading, parameter2, currentMode }) => {
 
   return (
     <div style={{ color: currentMode === parameter2 ? "white" : "black" }}>
-      <div className="container my-3">
+      <div className="container my-4">
         <div className="mb-3">
           <div className="d-flex align-items-center justify-content-between">
             <h1>{heading}</h1>
             <ColorPlate currentMode ={currentMode} />
           </div>
           <textarea
-            className="form-control border-danger border-2 shadow"
+            className="form-control border-danger border-2 shadow mt-3 fs-5"
             id="myBox"
             rows="10"
             value={text}

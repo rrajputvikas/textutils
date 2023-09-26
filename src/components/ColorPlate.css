@@ -34,15 +34,15 @@
 #colorPlate:hover {
     transform: scale(1.2);
 }
-
+/* Dark Mode Set */
 #colorPlate[data-color="#042743"] {
     background-color: #042743;
     box-shadow: 0px 0px 14px -1px #042743;
 }
 
-#colorPlate[data-color="#614a0b"] {
-    background-color: #614a0b;
-    box-shadow: 0px 0px 14px -1px #614a0b;
+#colorPlate[data-color="#330b61"] {
+    background-color: #330b61;
+    box-shadow: 0px 0px 14px -1px #330b61;
 }
 
 #colorPlate[data-color="#015478"] {
@@ -58,4 +58,29 @@
 #colorPlate[data-color="#383838"] {
     background-color: #383838;
     box-shadow: 0px 0px 14px -1px #383838;
+}
+/* Light Mode Set */
+#colorPlate[data-color="#A8CCE8"] {
+    background-color: #A8CCE8;
+    box-shadow: 0px 0px 14px -1px #A8CCE8;
+}
+
+#colorPlate[data-color="#A999D2"] {
+    background-color: #A999D2;
+    box-shadow: 0px 0px 14px -1px #A999D2;
+}
+
+#colorPlate[data-color="#6deff1"] {
+    background-color: #6deff1;
+    box-shadow: 0px 0px 14px -1px #6deff1;
+}
+
+#colorPlate[data-color="#DDB0C0"] {
+    background-color: #DDB0C0;
+    box-shadow: 0px 0px 14px -1px #DDB0C0;
+}
+
+#colorPlate[data-color="#fff"] {
+    background-color: #fff;
+    box-shadow: 0px 0px 14px -1px #fff;
 }
