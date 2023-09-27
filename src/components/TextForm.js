@@ -38,7 +38,7 @@ const TextForm = ({ heading, parameter2, currentMode }) => {
         <div className="mb-3">
           <div className="d-flex align-items-center justify-content-between">
             <h1>{heading}</h1>
-            <ColorPlate currentMode ={currentMode} />
+            <ColorPlate currentMode={currentMode} />
           </div>
           <textarea
             className="form-control border-danger border-2 shadow mt-3 fs-5"
@@ -79,16 +79,16 @@ const TextForm = ({ heading, parameter2, currentMode }) => {
         <p className="mx-2 font-monospace">
           {text.length === 0
             ? 0
-            : text.split(" ")[text.split(" ").length - 1] === ""
-            ? text.split(" ").length - 1
-            : text.split(" ").length}{" "}
-          Words and {text.length} Characters
+            : text.split(/\s+/)[text.split(/\s+/).length - 1] === ""
+            ? text.split(/\s+/).length - 1
+            : text.split(/\s+/).length}{" "}
+          Words and {text.replace(/\s/g, "").length} Characters
         </p>
         <p className="mx-2 font-monospace">
-          {Math.trunc(0.008 * text.split(" ").length)} min{" "}
+          {Math.trunc(0.008 * text.split(/\s+/).length)} min{" "}
           {Math.trunc(
-            (0.008 * text.split(" ").length -
-              Math.trunc(0.008 * text.split(" ").length)) *
+            (0.008 * text.split(/\s+/).length -
+              Math.trunc(0.008 * text.split(/\s+/).length)) *
               60
           )}{" "}
           sec read.
@@ -103,7 +103,14 @@ const TextForm = ({ heading, parameter2, currentMode }) => {
           />
         </div>
         <p className={`mx-2 font-monospace fw-${currentWeight}`}>
-          {text.length > 0 ? text : "Your output here!"}
+          {text.length > 0
+            ? text.split("\n").map((line, i) => (
+                <React.Fragment key={i}>
+                  {line}
+                  {i < text.length - 1 && <br />}{" "}
+                </React.Fragment>
+              ))
+            : "Your output here!"}
         </p>
       </div>
     </div>

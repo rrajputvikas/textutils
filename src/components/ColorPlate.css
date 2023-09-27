@@ -1,3 +1,7 @@
+:root {
+    --custom-inset-light: inset 0px 0px 5px -2px black;
+    --custom-inset-dark: inset 0px 0px 12px -5px black;
+}
 #colorPlate {
   display: inline-block;
   width: 25px;
@@ -6,11 +10,11 @@
   cursor: pointer;
 }
 .color-plate-in-dark {
-    border: 1px dashed white;
+    outline: 1px dashed white;
     animation: rotateClock 11s linear infinite;
 }
 .color-plate-in-light {
-    border: 1px dashed black;
+    outline: 1px dashed black;
     animation: rotateAntiClock 11s linear infinite;
 }
 
@@ -31,56 +35,53 @@
     }
 }
 
-#colorPlate:hover {
-    transform: scale(1.2);
-}
 /* Dark Mode Set */
 #colorPlate[data-color="#042743"] {
     background-color: #042743;
-    box-shadow: 0px 0px 14px -1px #042743;
+    box-shadow: 0px 0px 14px -1px #042743, var(--custom-inset-dark);
 }
 
 #colorPlate[data-color="#330b61"] {
     background-color: #330b61;
-    box-shadow: 0px 0px 14px -1px #330b61;
+    box-shadow: 0px 0px 14px -1px #330b61, var(--custom-inset-dark);
 }
 
 #colorPlate[data-color="#015478"] {
     background-color: #015478;
-    box-shadow: 0px 0px 14px -1px #015478;
+    box-shadow: 0px 0px 14px -1px #015478, var(--custom-inset-dark);
 }
 
 #colorPlate[data-color="#540931"] {
     background-color: #540931;
-    box-shadow: 0px 0px 14px -1px #540931;
+    box-shadow: 0px 0px 14px -1px #540931, var(--custom-inset-dark);
 }
 
 #colorPlate[data-color="#383838"] {
     background-color: #383838;
-    box-shadow: 0px 0px 14px -1px #383838;
+    box-shadow: 0px 0px 14px -1px #383838, var(--custom-inset-dark);
 }
 /* Light Mode Set */
 #colorPlate[data-color="#A8CCE8"] {
     background-color: #A8CCE8;
-    box-shadow: 0px 0px 14px -1px #A8CCE8;
+    box-shadow: 0px 0px 14px -1px #A8CCE8, var(--custom-inset-light);
 }
 
 #colorPlate[data-color="#A999D2"] {
     background-color: #A999D2;
-    box-shadow: 0px 0px 14px -1px #A999D2;
+    box-shadow: 0px 0px 14px -1px #A999D2, var(--custom-inset-light);
 }
 
 #colorPlate[data-color="#6deff1"] {
     background-color: #6deff1;
-    box-shadow: 0px 0px 14px -1px #6deff1;
+    box-shadow: 0px 0px 14px -1px #6deff1, var(--custom-inset-light);
 }
 
 #colorPlate[data-color="#DDB0C0"] {
     background-color: #DDB0C0;
-    box-shadow: 0px 0px 14px -1px #DDB0C0;
+    box-shadow: 0px 0px 14px -1px #DDB0C0, var(--custom-inset-light);
 }
 
 #colorPlate[data-color="#fff"] {
     background-color: #fff;
-    box-shadow: 0px 0px 14px -1px #fff;
+    box-shadow: 0px 0px 14px -1px #fff, var(--custom-inset-light);
 }
